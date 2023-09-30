@@ -1,0 +1,136 @@
+:root {
+  --lightest-green: rgb(220, 230, 221);
+  --success: #198754;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+body {
+  position: relative;
+  font-family: "Poppins", "Roboto", sans-serif;
+}
+
+.outer-container {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -30%);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
+  width: 90%;
+}
+
+@media (min-width: 500px) {
+  .outer-container {
+    width: 70%;
+  }
+}
+
+@media (min-width: 725px) {
+  .outer-container {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1060px) {
+  .outer-container {
+    width: 34%;
+  }
+}
+
+.switch button {
+  font-size: 1.2rem;
+}
+
+.active,
+.active:hover {
+  color: white !important;
+}
+
+.link {
+  text-decoration: none;
+  transition: color 0.1s linear;
+}
+
+.link:hover {
+  color: rgb(94, 203, 103) !important;
+}
+
+.btn:focus,
+.no-shadow:focus {
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+}
+
+/* Side NavBar Styling */
+
+.side-navbar {
+  background: var(--lightest-green);
+  width: 248px;
+  padding: 16px;
+  box-sizing: content-box;
+  height: 100vh;
+  position: fixed;
+}
+
+.nav-link:not(.active):hover {
+  color: var(--success) !important;
+}
+
+/* overview page styling */
+
+.overview {
+  animation: fade-in 1.4s;
+}
+
+.overview > h1 {
+  font-size: 5.5rem;
+}
+
+.add-caption {
+  color: var(--lightest-green);
+}
+
+.vertical-bar-grey {
+  background-color: var(--lightest-green);
+  border: 1px solid var(--lightest-green);
+}
+
+.overview-stats > div {
+  border-radius: 5%;
+  background: #f4f9f5;
+  border-left: #198754 solid 5px;
+}
+
+
+
+/* responsive styling -- mobile view */
+/* following Desktop First scheme*/
+
+@media (max-width: 1085px) {
+  .settings-img {
+    display: none;
+  }
+}
+
+@media (max-width: 805px){
+    .side-navbar{
+        display:none !important;
+    }
+
+    .overview, .purchases, .past, .settings{
+        padding-left:0 !important;
+    }
+    .mobile-nav{
+        display:block !important;
+        background-color: var(--lightest-green);
+    }
+    
+}
